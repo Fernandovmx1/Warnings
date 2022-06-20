@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Microsoft cloud sandbox",
+            "server": "https://businesscentral.dynamics.com/",
+            "tenant": "409e1d55-8ad1-4e21-bc65-3ed80ea195e6",                       
+            "environmentType": "Sandbox",
+            "environmentName": "PRDBSS",
+            "startupObjectId": 110,
+            "startupObjectType": "Table",
+            "breakOnError": true,
+            //"schemaUpdateMode": "ForceSync",           
+            "launchBrowser": true
+        }
+    ]
+}
