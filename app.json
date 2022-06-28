@@ -2,7 +2,7 @@
   "id": "b7d989db-b2a1-485a-b180-fd129ce51aa2",
   "name": "Warnings",
   "publisher": "Default publisher",
-  "version": "1.0.0.0",
+  "version": "1.0.0.1",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -10,14 +10,21 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+    {
+      "id": "db9b6ad5-b553-431c-909a-18900bc0d029",
+      "name": "Quality Control",
+      "publisher": "Cost Control Software",
+      "version": "2.1.0.7"
+    }
+  ],
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "20.0.0.0",
   "idRanges": [
     {
       "from": 70350,
-      "to": 70399
+      "to": 70359
     }
   ],
   "resourceExposurePolicy": {
