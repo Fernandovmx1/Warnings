@@ -2,7 +2,7 @@
   "id": "b7d989db-b2a1-485a-b180-fd129ce51aa2",
   "name": "Warnings",
   "publisher": "BSS",
-  "version": "1.0.0.1",
+  "version": "1.0.0.2",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -16,12 +16,6 @@
       "name": "Quality Control",
       "publisher": "Cost Control Software",
       "version": "2.1.0.7"
-    },
-    {
-      "id": "d5b16b34-f2d7-44f5-ba8e-3e1a09cdedbf",
-      "name": "DuplicationSalesShip",
-      "publisher": "BSS",
-      "version": "1.0.0.23"
     }
   ],
   "screenshots": [],
