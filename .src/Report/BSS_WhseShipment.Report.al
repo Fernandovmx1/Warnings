@@ -93,21 +93,27 @@ report 70351 "BSS Whse. - Shipment"
                     {
                         IncludeCaption = true;
                     }
-                    column(LotSeguimiento; ReservationEntryG."Lot No.")
+                    dataitem(ReservationEntryG; "Reservation Entry")
                     {
-                        IncludeCaption = true;
+                        column(LotSeguimiento; ReservationEntryG."Lot No.")
+                        {
+                            IncludeCaption = true;
+                        }
+                        column(QtyLote; ReservationEntryG.Quantity)
+                        {
+                            IncludeCaption = true;
+                        }
+                        trigger OnPreDataItem()
+                        begin
+                            GetLocation("Location Code");
+                            ReservationEntryG.SetRange("Item No.", "Warehouse Shipment Line"."Item No.");
+                            //ReservationEntryG.SetRange("Location Code", "Location Code");
+                            ReservationEntryG.SetRange("Source Type", 37);
+                            ReservationEntryG.SetRange("Source ID", "Warehouse Shipment Line"."Source No.");
+                            ReservationEntryG.setrange("Source Ref. No.", "Warehouse Shipment Line"."Source Line No.");
+                        end;
                     }
-                    trigger OnAfterGetRecord()
-                    begin
-                        GetLocation("Location Code");
-                        ReservationEntryG.Reset();
-                        ReservationEntryG.SetRange("Item No.", "Item No.");
-                        ReservationEntryG.SetRange("Location Code", "Location Code");
-                        ReservationEntryG.SetRange("Source Type", 37);
-                        ReservationEntryG.SetRange("Source ID", "Source No.");
-                        ReservationEntryG.setrange("Source Ref. No.", "Source Line No.");
-                        if ReservationEntryG.FindFirst() then;
-                    end;
+
                 }
             }
 
@@ -139,8 +145,6 @@ report 70351 "BSS Whse. - Shipment"
         Location: Record Location;
         CurrReportPageNoCaptionLbl: Label 'Page';
         WarehouseShipmentCaptionLbl: Label 'Warehouse Shipment';
-
-        ReservationEntryG: Record "Reservation Entry";
 
     local procedure GetLocation(LocationCode: Code[10])
     begin

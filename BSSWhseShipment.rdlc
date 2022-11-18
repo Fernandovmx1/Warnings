@@ -149,6 +149,15 @@
       </DefaultValue>
       <Prompt>LotSeguimientoCaption</Prompt>
     </ReportParameter>
+    <ReportParameter Name="QtyLoteCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>QtyLoteCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>QtyLoteCaption</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
@@ -257,6 +266,12 @@ End Function
         </Field>
         <Field Name="LotSeguimiento">
           <DataField>LotSeguimiento</DataField>
+        </Field>
+        <Field Name="QtyLote">
+          <DataField>QtyLote</DataField>
+        </Field>
+        <Field Name="QtyLoteFormat">
+          <DataField>QtyLoteFormat</DataField>
         </Field>
       </Fields>
       <Query>
